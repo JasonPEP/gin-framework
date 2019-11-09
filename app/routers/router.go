@@ -1,12 +1,14 @@
-package routers
+package router
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 )
 
-func InitRouters() *gin.Engine {
-	Router := gin.Default()
-	InitAccountRouter(Router)
-
-	return Router
+func init() {
+	fmt.Println("Routers initializing")
+}
+func InitRouters(engine *gin.Engine) {
+	InitAccountRouter(engine)
+	InitBookRouter(engine)
 }
