@@ -17,6 +17,5 @@
 
 
 /.vendor/*
-/vendor/
 /.idea/
 /gin-framework.iml
