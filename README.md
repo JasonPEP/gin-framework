@@ -1,1 +1,2 @@
 ### The document continue update
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=JasonPEP_gin-framework&metric=alert_status)](https://sonarcloud.io/dashboard?id=JasonPEP_gin-framework)

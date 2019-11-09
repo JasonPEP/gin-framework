@@ -1,0 +1,10 @@
+language: go
+go:
+  - 1.x
+  - 1.13.x
+script:
+  - go test -v
+notifications:
+  email:
+    recipients:
+      - jasonsuler@gmail.com
