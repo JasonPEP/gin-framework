@@ -8,17 +8,17 @@ import (
 )
 
 var (
-	engine *gin.Engine
+	Engine *gin.Engine
 )
 
 func init() {
 	fmt.Println("Application initializing")
-	engine = gin.New()
+	Engine = gin.New()
 }
 func Run() (err error) {
 	// init middlewares
-	middleware.InitMiddleware(engine)
+	middleware.InitMiddleware(Engine)
 	// init routers
-	router.InitRouters(engine)
-	return engine.Run(":8080")
+	router.InitRouters(Engine)
+	return Engine.Run(":8080")
 }

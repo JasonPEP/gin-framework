@@ -6,11 +6,10 @@ import (
 
 func GetAccount(c *gin.Context) {
 	id := c.Param("id")
-
 	c.String(200, "got account %s", id)
 }
 func CreateAccount(c *gin.Context) {
-	c.JSON(200, "creating account")
+	c.String(200, "creating account")
 }
 func UpdateAccount(c *gin.Context) {
 	id := c.Param("id")
