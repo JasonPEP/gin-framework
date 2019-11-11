@@ -7,13 +7,13 @@ addons:
     organization: "jasonpep-github"
     token:
       secure: ${SONAR_TOKEN}
-install:
-  # Installs Go Meta Linter (Golint and Go vet are also supported independently)
-  - go get -u gopkg.in/alecthomas/gometalinter.v2
-  - $GOPATH/bin/gometalinter.v2 --install
+#install:
+#  # Installs Go Meta Linter (Golint and Go vet are also supported independently)
+#  - go get -u gopkg.in/alecthomas/gometalinter.v2
+#  - $GOPATH/bin/gometalinter.v2 --install
 script:
   # Execute Go Meta Linter
-  - $GOPATH/bin/gometalinter.v2 samples/ > gometalinter-report.out || true
+#  - $GOPATH/bin/gometalinter.v2 samples/ > gometalinter-report.out || true
   # Execute tests and coverage
   - go test ./... -json > report.json
   - go test ./... -coverprofile=coverage.out
