@@ -6,13 +6,24 @@ addons:
   sonarcloud:
     organization: "jasonpep-github"
     token:
-      secure: '${SONAR_TOKEN}'
+      secure: ${SONAR_TOKEN}
+install:
+  # Installs Go Meta Linter (Golint and Go vet are also supported independently)
+  - go get -u gopkg.in/alecthomas/gometalinter.v2
+  - $GOPATH/bin/gometalinter.v2 --install
 script:
-  - make test
+  # Execute Go Meta Linter
+  - $GOPATH/bin/gometalinter.v2 samples/ > gometalinter-report.out || true
+  # Execute tests and coverage
+  - go test ./... -json > report.json
+  - go test ./... -coverprofile=coverage.out
+  # And then execute SonarCloud analysis which will run its own code analysis, and also reuse the linters' results
   - sonar-scanner
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
 notifications:
   email:
     recipients:
