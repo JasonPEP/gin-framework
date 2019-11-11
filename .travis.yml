@@ -6,7 +6,7 @@ addons:
   sonarcloud:
     organization: "jasonpep-github"
     token:
-      secure: ${SONAR_TOKEN}
+      secure: '2910c16ad1a800ca509b9cc838427574cde7b3ff'
 #install:
 #  # Installs Go Meta Linter (Golint and Go vet are also supported independently)
 #  - go get -u gopkg.in/alecthomas/gometalinter.v2
