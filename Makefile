@@ -1,5 +1,8 @@
 ## load .env
 include $(PWD)/Makefile.env
+GO ?= go
+TESTFOLDER := $(shell $(GO) list ./... | grep -E 'gin$$|binding$$|render$$' | grep -v examples)
+
 ## install dep
 .PHONY: install
 install:
@@ -13,7 +16,7 @@ build: install
 ## run test
 .PHONY: test
 test: install
-	go test
+	$(GO) test ./... -v -race -coverprofile=profile.json -covermode=atomic
 ######################################
 ## run app
 .PHONY: run
