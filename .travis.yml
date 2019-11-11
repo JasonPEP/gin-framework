@@ -6,7 +6,7 @@ addons:
   sonarcloud:
     organization: "jasonpep-github"
     token:
-      secure: $SONAR_TOKEN
+      secure: '${SONAR_TOKEN}'
 script:
   - make test
   - sonar-scanner
