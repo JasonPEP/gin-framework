@@ -19,3 +19,4 @@
 /.vendor/*
 /.idea/
 /gin-framework.iml
+/vendor/*
