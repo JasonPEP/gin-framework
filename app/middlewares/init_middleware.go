@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
+	"log"
 )
 
 /*
@@ -11,17 +11,18 @@ Middlewares Configuration
 type Middlewares []gin.HandlerFunc
 
 var (
-	MiddlewareChain Middlewares
+	chain Middlewares
 )
 
 func init() {
-	fmt.Println("Middlewares initializing")
+	log.Println("Middlewares initializing")
 	// init middlewares
-	MiddlewareChain = Middlewares{
+	chain = Middlewares{
 		FilterInvalidRequest,
 		RequestLogging,
+		Auth,
 	}
 }
 func InitMiddleware(engine *gin.Engine) {
-	engine.Use(MiddlewareChain...)
+	engine.Use(chain...)
 }

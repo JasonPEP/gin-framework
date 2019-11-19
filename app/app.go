@@ -3,6 +3,7 @@ package app
 import (
 	"fmt"
 	middleware "gin-framework/app/middlewares"
+	model "gin-framework/app/models"
 	router "gin-framework/app/routers"
 	"github.com/gin-gonic/gin"
 )
@@ -16,6 +17,7 @@ func init() {
 	Engine = gin.New()
 }
 func Run() (err error) {
+	model.InitDatabase()
 	// init middlewares
 	middleware.InitMiddleware(Engine)
 	// init routers
