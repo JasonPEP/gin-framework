@@ -13,7 +13,7 @@ build: install
 ## run test
 .PHONY: test
 test: install
-	go test
+	go test -v ./...
 ######################################
 ## run app
 .PHONY: run
