@@ -4,6 +4,8 @@ import (
 	"fmt"
 	middleware "gin-framework/app/middlewares"
 	router "gin-framework/app/routers"
+	"gin-framework/app/tools"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -21,5 +23,6 @@ func Run() (err error) {
 	middleware.InitMiddleware(Engine)
 	// init routers
 	router.InitRouters(Engine)
+	fmt.Println(tools.TimeToTimestemp(time.Now()))
 	return Engine.Run(":8080")
 }

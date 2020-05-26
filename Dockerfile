@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ADD gin-framework /
+ADD main /
 
 EXPOSE 8080
-CMD "./gin-framework"
+CMD "./main"

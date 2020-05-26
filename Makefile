@@ -23,9 +23,9 @@ run: build
 ## build for linux/amd64
 .PHONY: build-linux
 build-linux:
-	GOOS=linux GOARCH=amd64 go build -o $(BINARY_NAME) -v
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o $(BINARY_NAME) -v
 ######################################
 ## build for windows/amd64
 .PHONY: build-windows
 build-windows:
-	GOOS=windows GOARCH=amd64 go build -o $(BINARY_NAME) -v
+	CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o $(BINARY_NAME) -v
