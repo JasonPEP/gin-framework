@@ -24,7 +24,7 @@ func RequestTracing(c *gin.Context) {
 	couting(c)
 	begin := time.Now()
 	c.Next()
-	end := time.Now().Sub(begin)
+	end := time.Since(begin)
 	consuming(c, end)
 	log.Fatal(end.Milliseconds())
 }
